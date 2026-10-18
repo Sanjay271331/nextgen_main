@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blue-900: #02050A;
+  --color-blue-800: #061121;
+  --color-blue-700: #0A1C36;
+  --color-blue-600: #0F284C;
+  --color-blue-500: #163B6E;
+  --color-blue-400: #205191;
+  --color-blue-300: #2C69B5;
+  --color-blue-200: #3B82F6;
+  
+  --color-orange-brand: #e84e1b;
+  --color-navy-brand: #122a4f;
+  --color-gold: #D4AF37;
+}
+
+@layer base {
+  body {
+    @apply bg-[#02050A] text-gray-200 font-sans antialiased overflow-x-hidden;
+    /* Hide default cursor for custom cursor */
+    cursor: none; 
+  }
+  
+  a, button, input, textarea {
+    cursor: none;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-[#02050A];
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-[#163B6E] rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#205191];
+}
+
+/* Metallic 3D Text Effect */
+.metallic-text {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #a0b4c8 40%,
+    #5a738c 50%,
+    #2c4056 55%,
+    #8ba4bc 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 
+    0px 4px 6px rgba(0, 0, 0, 0.8),
+    0px 8px 12px rgba(0, 0, 0, 0.5),
+    0px -1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Futuristic Backgrounds */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
